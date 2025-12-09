@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio Desenvolvedor de Sistemas</title>
+    <title>Portifólio - Kauã Everton</title>
+     <link rel="icon" href="IMG/Kauã.png" type="image/x-icon"/>
     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <img class="logomarca" src="IMG/Kauã.png" alt="LOGOmarca de Kauã">
+        <img class="logomarca" src="IMG/Kauã.png" alt="LOGOmarca de Kauã"><h1> Portifólio Desenvolvedor</h1>
         <nav>
             <ul>
                 <li><a href="#sobre">Sobre Mim</a></li>
@@ -19,9 +21,12 @@
     </header>
 
     <section id="minha-pessoa" class="sobre">
-        <h1>Kauã Everton de Lira</h1>
-        <p>Desenvolvedor Full Stack</p>
-
+        <div class="intro-text">
+            <h1>Kauã Everton de Lira</h1>
+            <p>Desenvolvedor Full Stack</p>
+        </div>
+        
+        <img src="IMG/Perfil.png" alt="Foto Kauã Everton de Lira">
     </section>
 
     <section id="sobre">
@@ -33,18 +38,103 @@
         <h2>Projetos</h2>
         <ul>
             <li>
-                <h3>Projeto 1: Sistema Funcional Para Funcionários Bater ponto.</h3>
-                <p>Descrição: Um sistema web para gerenciar registros de funcionários, históricos de</p>
+                <h3>Projeto 1: Sistema Funcional Para Funcionários Bater ponto. (Moretti)</h3>
+                <p>Descrição: Um sistema web para gerenciar registros de funcionários e históricos de pontos</p>
+                <strong>Uso de: HTML, CSS e Firebase</strong>
+                <center><img href="" src="IMG/Moretti_LOGONOVA-removebg-preview.png" alt="Foto Moretti"></center>
             </li>
             <li>
-                <h3>Projeto 2: Aplicativo de Finanças Pessoais</h3>
-                <p>Descrição: Um aplicativo móvel para ajudar os usuários a controlar suas finanças pessoais e orçamentos.</p>
+                <h3>Projeto 2: Site Web Inspirado em Serviço de Streaming (BNS Max) </h3>
+                <p>Descrição: Um site web inspirado na HBO Max</p>
+                <strong>Uso de: HTML e CSS</strong>
+                <center><img src="IMG/BNSmaxSEMFUNDO.png" alt="Foto BNXMAX"></center>
             </li>
         </ul>
     </section>
 
+    <section id="certificados">
+    <h2>Certificados</h2>
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 151313.png" alt="Certificado 1">
+            </div>
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 151332.png" alt="Certificado 2">
+            </div>
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 151344.png" alt="Certificado 3">
+            </div>
+             </div>
+    </div>
+</section>
+    <center>
     <section id="contato">
         <h2>Contato</h2>
-        <p>Você pode entrar em contato comigo através do email:
+        <p>Você pode entrar em contato comigo através do email:</p><br>
+        <div class="social-container">
+        
+        <a href="https://www.instagram.com/k.everton09/?next=%2F" target="_blank" class="btn-social insta">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://w.app/kauaevertondelira" target="_blank" class="btn-social whats">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://github.com/kauaelira-senai" target="_blank" class="btn-social git">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+    </section></center>
+
+
+
+    <script>
+        // Pega os elementos do HTML
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImage");
+        const span = document.getElementsByClassName("close")[0];
+        const track = document.querySelector('.slide-track');
+
+        // Pega todas as imagens dentro dos slides do carrossel
+        // Usamos o seletor que já existe no seu CSS: .slide img
+        const images = document.querySelectorAll('.slide img');
+
+        // Para cada imagem do carrossel, adiciona um "ouvidor de cliques"
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "flex"; // Mostra o modal
+                modal.style.alignItems = "center"; // Centraliza verticalmente
+                modalImg.src = this.src; // Pega o SRC da imagem clicada e põe no modal
+                
+                // Opcional: Pausa o carrossel enquanto o modal está aberto
+                track.style.animationPlayState = 'paused';
+            });
+        });
+
+        // Quando clicar no 'X' (span), fecha o modal
+        span.onclick = function() {
+            modal.style.display = "none";
+             // Opcional: Retoma o carrossel
+             track.style.animationPlayState = 'running';
+        }
+
+        // Se clicar fora da imagem (no fundo preto), também fecha
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                // Opcional: Retoma o carrossel
+                track.style.animationPlayState = 'running';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
 </body>
 </html>
