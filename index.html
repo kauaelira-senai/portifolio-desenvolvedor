@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio - Kauã Everton</title>
-     <link rel="icon" href="IMG/Kauã.png" type="image/x-icon"/>
+    <link rel="icon" href="IMG/Kauã.png" type="image/x-icon"/>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -76,15 +76,34 @@
                 <img src="IMG/Captura de tela 2025-12-09 151344.png" alt="Certificado 3">
             </div>
             <div class="slide">
-                <img src="IMG/Captura de tela 2025-12-09 231022.png" alt="Certificado 3">
+                <img src="IMG/Captura de tela 2025-12-09 231022.png" alt="Certificado 4">
             </div>
             <div class="slide">
-                <img src="IMG/Captura de tela 2025-12-09 231037.png" alt="Certificado 3">
+                <img src="IMG/Captura de tela 2025-12-09 231037.png" alt="Certificado 5">
             </div>
             <div class="slide">
-                <img src="IMG/Captura de tela 2025-12-09 231105.png" alt="Certificado 3">
+                <img src="IMG/Captura de tela 2025-12-09 231105.png" alt="Certificado 6">
             </div>
-             </div>
+
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 151313.png" alt="Certificado 1">
+            </div>
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 151332.png" alt="Certificado 2">
+            </div>
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 151344.png" alt="Certificado 3">
+            </div>
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 231022.png" alt="Certificado 4">
+            </div>
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 231037.png" alt="Certificado 5">
+            </div>
+            <div class="slide">
+                <img src="IMG/Captura de tela 2025-12-09 231105.png" alt="Certificado 6">
+            </div>
+        </div>
     </div>
 </section>
     <center>
@@ -107,9 +126,11 @@
 
     </div>
     </section></center>
-
-
-
+    
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
     <script>
         // Pega os elementos do HTML
         const modal = document.getElementById("imageModal");
@@ -118,14 +139,14 @@
         const track = document.querySelector('.slide-track');
 
         // Pega todas as imagens dentro dos slides do carrossel
-        // Usamos o seletor que já existe no seu CSS: .slide img
         const images = document.querySelectorAll('.slide img');
 
         // Para cada imagem do carrossel, adiciona um "ouvidor de cliques"
         images.forEach(img => {
             img.addEventListener('click', function() {
-                modal.style.display = "flex"; // Mostra o modal
+                modal.style.display = "flex"; // Mostra o modal (usando flex para centralizar)
                 modal.style.alignItems = "center"; // Centraliza verticalmente
+                modal.style.justifyContent = "center"; // Centraliza horizontalmente
                 modalImg.src = this.src; // Pega o SRC da imagem clicada e põe no modal
                 
                 // Opcional: Pausa o carrossel enquanto o modal está aberto
@@ -142,6 +163,7 @@
 
         // Se clicar fora da imagem (no fundo preto), também fecha
         modal.onclick = function(event) {
+            // Certifica-se de que o clique foi exatamente no fundo do modal e não na imagem
             if (event.target === modal) {
                 modal.style.display = "none";
                 // Opcional: Retoma o carrossel
@@ -149,11 +171,5 @@
             }
         }
     </script>
-
-</body>
-</html>
-
-</body>
-</html>
 </body>
 </html>
