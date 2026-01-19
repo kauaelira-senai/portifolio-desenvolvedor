@@ -342,83 +342,53 @@ footer {
   padding: 40px 20px;
 }
 
-/* Área onde os ícones flutuam */
-.float-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: 320px;
-  margin: 30px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  overflow: visible;
-}
+/* Container que segura as 3 tabelas */
+        .tech-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Permite quebrar linha no celular */
+            margin-top: 30px;
+            padding: 0 20px;
+        }
 
-/* Estilo dos ícones */
-.float-icon {
-  width: 110px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25), 0 6px 12px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  position: relative;
-  user-select: none;
-  -webkit-user-drag: none;
-}
+        /* O visual de cada "tabela" individual */
+        .tech-table {
+            background-color: linear-gradient(to bottom, #0f172a, #1e293b); /* Fundo branco ou ajuste conforme seu tema */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-/* Efeito quando passa o mouse */
-.float-icon:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 28px 60px rgba(0,0,0,0.30), 0 10px 18px rgba(0,0,0,0.10);
-}
+        .tech-table:hover {
+            transform: translateY(-5px); /* Efeito ao passar o mouse */
+        }
 
-/* Animação de flutuação */
-@keyframes floatA {
-  0%   { transform: translateY(0) translateX(0); }
-  25%  { transform: translateY(-14px) translateX(-6px); }
-  50%  { transform: translateY(0) translateX(-2px); }
-  75%  { transform: translateY(10px) translateX(6px); }
-  100% { transform: translateY(0) translateX(0); }
-}
+        .tech-table h3 {
+            color: #ffffff;
+            border-bottom: 2px solid #007bff; /* Cor de destaque */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
 
-@keyframes floatB {
-  0%   { transform: translateY(0) translateX(0); }
-  20%  { transform: translateY(10px) translateX(8px); }
-  40%  { transform: translateY(-8px) translateX(2px); }
-  60%  { transform: translateY(6px) translateX(-6px); }
-  80%  { transform: translateY(-4px) translateX(4px); }
-  100% { transform: translateY(0) translateX(0); }
-}
+        /* Container dos ícones dentro da tabela */
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-@keyframes floatC {
-  0%   { transform: translateY(0) translateX(0); }
-  30%  { transform: translateY(-12px) translateX(10px); }
-  55%  { transform: translateY(8px) translateX(-8px); }
-  85%  { transform: translateY(-6px) translateX(6px); }
-  100% { transform: translateY(0) translateX(0); }
-}
-
-/* Aplicar animações individualmente */
-.icon-html { animation: floatA 6.8s ease-in-out infinite; }
-.icon-css  { animation: floatB 7.6s ease-in-out infinite; }
-.icon-js   { animation: floatC 8.2s ease-in-out infinite; }
-
-/* Responsividade */
-@media (max-width: 700px) {
-  .float-container {
-    gap: 18px;
-    height: 260px;
-  }
-  .float-icon { width: 88px; }
-}
-
-@media (max-width: 420px) {
-  .float-container {
-    height: 220px;
-    gap: 12px;
-  }
-  .float-icon { width: 72px; }
-}
-
+        /* Tamanho padrão dos ícones */
+        .tech-icons img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            cursor: pointer;
+        }
